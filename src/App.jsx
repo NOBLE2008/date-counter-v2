@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -13,18 +11,14 @@ function App() {
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
   return (
-    <div>
-      <button onClick={() => {
-        setSteps((s) => {
-          return s - 1;
-        })
-      }}>-</button>
+    <div className='con'>
+      <span>
+      <input type="range" min={0} max={10} value={steps} onChange={(e) => {
+        setSteps(e.target.value)
+      }}/>
       <p>Steps: {steps}</p>
-      <button onClick={() => {
-        setSteps((s) => {
-          return s + 1;
-        })
-      }}>+</button>
+      </span>
+      <div>
       <button onClick={() => {
         setCount((c) => {
           return count - (86400000 * steps);
@@ -36,7 +30,8 @@ function App() {
           return count + (86400000 * steps);
         })
       }}>+</button>
-      <p>{Date.now() > count ? `${Math.floor((Date.now() - count)/86400000)} days ago was ${weekdays[new Date(count).getDay()]}, ${months[new Date(count).getMonth()]} ${new Date(count).getDate()}, ${new Date(count).getFullYear()}`: Math.floor((Date.now() - count)/86400000) === 0 ? `Today is ${weekdays[new Date(count).getDay()]}, ${months[new Date(count).getMonth()]} ${new Date(count).getDate()}, ${new Date(count).getFullYear()}` : `${Math.abs(Math.floor((Date.now() - count)/86400000))} days till ${weekdays[new Date(count).getDay()]}, ${months[new Date(count).getMonth()]} ${new Date(count).getDate()}, ${new Date(count).getFullYear()}`}</p>
+      </div>
+      <div><p>{Date.now() > count ? `${Math.floor((Date.now() - count)/86400000)} days ago was ${weekdays[new Date(count).getDay()]}, ${months[new Date(count).getMonth()]} ${new Date(count).getDate()}, ${new Date(count).getFullYear()}`: Math.floor((Date.now() - count)/86400000) === 0 ? `Today is ${weekdays[new Date(count).getDay()]}, ${months[new Date(count).getMonth()]} ${new Date(count).getDate()}, ${new Date(count).getFullYear()}` : `${Math.abs(Math.floor((Date.now() - count)/86400000))} days till ${weekdays[new Date(count).getDay()]}, ${months[new Date(count).getMonth()]} ${new Date(count).getDate()}, ${new Date(count).getFullYear()}`}</p></div>
     </div>
   )
 }

@@ -27,6 +27,22 @@
   }
 }
 
+.con{
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  justify-content: space-between;
+  font-family: sans-serif;
+}
+
+span p{
+  display: inline;
+}
+
+button, p{
+  display: inline;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
