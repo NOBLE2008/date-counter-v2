@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -12,7 +14,11 @@ function App() {
 
   return (
     <div>
-      <button></button>
+      <button onClick={() => {
+        setSteps((s) => {
+          return s - 1;
+        })
+      }}>-</button>
       <p>Steps: {steps}</p>
       <button>+</button>
       <button>-</button>
