@@ -20,7 +20,11 @@ function App() {
         })
       }}>-</button>
       <p>Steps: {steps}</p>
-      <button>+</button>
+      <button onClick={() => {
+        setSteps((s) => {
+          return s + 1;
+        })
+      }}>+</button>
       <button>-</button>
       <p>Count</p>
       <button>+</button>
