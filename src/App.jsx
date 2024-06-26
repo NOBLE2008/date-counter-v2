@@ -25,7 +25,11 @@ function App() {
           return s + 1;
         })
       }}>+</button>
-      <button>-</button>
+      <button onClick={() => {
+        setCount((c) => {
+          return count - (86400000 * steps);
+        })
+      }}>-</button>
       <p>Count</p>
       <button>+</button>
       <p></p>
